@@ -3,7 +3,7 @@ const Room = require('./room.js');
 
 
 const Decorator = function(){
-  this.paintStock = [ ];
+  this.paintStock = [];
 }
 
 Decorator.prototype.addCan = function (can) {
@@ -20,7 +20,12 @@ Decorator.prototype.paintVolume = function () {
 
 Decorator.prototype.canPaint = function (room) {
   if (room.area < this.paintVolume() ){
-    room.paint()
+    room.paint();
+    let canOrder = []
+    // for (can of this.paintStock){
+    //   canOrder.push(can.volume);
+    //   canOrder.sort();
+    // }
     return true;
   }
   else {
